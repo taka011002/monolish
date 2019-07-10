@@ -27,7 +27,7 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         
-        lives = Live.seeds()
+        lives = LiveRepository.selectAll()
         
         tableView.register(UINib(resource: R.nib.calendarContentsTableViewCell), forCellReuseIdentifier: R.nib.calendarContentsTableViewCell.name)
         
@@ -46,31 +46,33 @@ class CalendarViewController: UIViewController {
     
 }
 
-extension CalendarViewController: FSCalendarDelegate {
+extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         selectedDate = dateFormatter.string(from: date)
+    }
+    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int{
+        if Array(lives.map{$0.date}.joined()).contains(dateFormatter.string(from: date)) {
+            return 1
+        } else {
+            return 0
+        }
     }
 }
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lives.filter{ $0.date == selectedDate}.count
+        return lives.filter{ $0.date.contains(selectedDate)}.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.calendarContentsTableViewCell.name) as! CalendarContentsTableViewCell
-        let live = lives.filter{ $0.date == selectedDate}[indexPath.row]
+        let live = lives.filter{ $0.date.contains(selectedDate)}[indexPath.row]
         cell.set(live: live)
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = R.storyboard.liveDetail.liveDetail()!
-        nextVC.set(live: lives[indexPath.row])
-        navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
+        
 }

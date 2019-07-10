@@ -14,6 +14,7 @@ class LiveDetailViewController: UIViewController {
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var mainTitleLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
     private var live: Live!
@@ -33,6 +34,11 @@ class LiveDetailViewController: UIViewController {
         mainImageView.image = live.mainImage
         mainTitleLabel.text = live.name
         placeLabel.text = live.place
+        dateLabel.text = live.date.map{ live -> String in
+            var date = live.suffix(5)
+            date.replaceSubrange(date.range(of: "-")!, with: ".")
+            return String(date)
+            }.joined(separator: "/")
     }
     
     override func viewWillDisappear(_ animated: Bool) {

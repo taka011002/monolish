@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGK-3A-b6l">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rijf" translatesAutoresizingMaskIntoConstraints="NO" id="qCn-9h-7bV">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rijf" translatesAutoresizingMaskIntoConstraints="NO" id="qCn-9h-7bV">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="350" id="hGg-of-J4c"/>
@@ -57,7 +57,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="CIa-5w-k7K">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="55.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.28/8.29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urd-Hr-RJC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.28/8.29" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urd-Hr-RJC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="29"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                                 <nil key="textColor"/>
@@ -114,7 +114,6 @@
                                             <constraint firstItem="Xnl-T9-3bh" firstAttribute="top" secondItem="yZE-DY-azx" secondAttribute="bottom" constant="20" id="wgv-bx-YmD"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
@@ -148,6 +147,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SGC-4m-vOR"/>
                     <connections>
+                        <outlet property="dateLabel" destination="urd-Hr-RJC" id="csN-Ao-ffd"/>
                         <outlet property="headerView" destination="eGK-3A-b6l" id="h6d-1R-m8H"/>
                         <outlet property="mainImageView" destination="qCn-9h-7bV" id="6vT-OR-jzD"/>
                         <outlet property="mainTitleLabel" destination="YN9-Qq-coK" id="D8C-vV-t15"/>
