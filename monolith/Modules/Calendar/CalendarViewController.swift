@@ -8,6 +8,7 @@
 
 import UIKit
 import FSCalendar
+import Firebase
 
 class CalendarViewController: UIViewController {
 
@@ -21,13 +22,18 @@ class CalendarViewController: UIViewController {
         }
     }
     
-    private var lives: [Live]!
+    private var lives = [Live]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         
-        lives = LiveRepository.selectAll()
+        getLives()
+//        lives = LiveRepository.selectAll()
         
         tableView.register(UINib(resource: R.nib.calendarContentsTableViewCell), forCellReuseIdentifier: R.nib.calendarContentsTableViewCell.name)
         
@@ -75,4 +81,19 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
         
+}
+
+extension CalendarViewController {
+    private func getLives() {
+        Firestore.firestore().collection("lives").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.lives = querySnapshot!.documents.map({ document -> Live in
+                    let data = document.data()
+                    return Live(name: data["name"] as! String, place: data["place"] as! String, date: data["date"] as! [String], officialSiteURL: data["officialSiteURL"] as! String, mainImageURL: data["mainImageURL"] as! String)
+                })
+            }
+        }
+    }
 }

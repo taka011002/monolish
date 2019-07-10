@@ -14,5 +14,5 @@ struct Live {
     let place: String
     let date: [String]
     let officialSiteURL: String
-    let mainImage: UIImage
+    let mainImageURL: String
 }

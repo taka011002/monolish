@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0604FCE571AAD5802C304005 /* Pods_monolithTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F164F1C37D012356A79BBC7 /* Pods_monolithTests.framework */; };
+		6F3EC86322D613C100AB064C /* FirestoreAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3EC86222D613C100AB064C /* FirestoreAccess.swift */; };
+		6F3EC86522D61ED200AB064C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F3EC86422D61ED200AB064C /* GoogleService-Info.plist */; };
 		6F52A12A22D1E66200CEEE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F52A12922D1E66200CEEE7D /* AppDelegate.swift */; };
 		6F52A13122D1E66300CEEE7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F52A13022D1E66300CEEE7D /* Assets.xcassets */; };
 		6F52A13422D1E66300CEEE7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F52A13222D1E66300CEEE7D /* LaunchScreen.storyboard */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		064AA2EC6828F98CE5101EE4 /* Pods-monolith.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-monolith.release.xcconfig"; path = "Target Support Files/Pods-monolith/Pods-monolith.release.xcconfig"; sourceTree = "<group>"; };
 		1F164F1C37D012356A79BBC7 /* Pods_monolithTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_monolithTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F3EC86222D613C100AB064C /* FirestoreAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreAccess.swift; sourceTree = "<group>"; };
+		6F3EC86422D61ED200AB064C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F52A12622D1E66200CEEE7D /* monolith.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monolith.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F52A12922D1E66200CEEE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F52A13022D1E66300CEEE7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				6F52A13022D1E66300CEEE7D /* Assets.xcassets */,
 				6F52A13222D1E66300CEEE7D /* LaunchScreen.storyboard */,
 				6F52A13522D1E66300CEEE7D /* Info.plist */,
+				6F3EC86422D61ED200AB064C /* GoogleService-Info.plist */,
 				6F52A17822D1FBDC00CEEE7D /* R.generated.swift */,
 			);
 			path = monolith;
@@ -249,6 +254,7 @@
 		6F8E441822D4F1B700448510 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				6F3EC86222D613C100AB064C /* FirestoreAccess.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				6F52A18022D203D800CEEE7D /* Main.storyboard in Resources */,
 				6F52A13422D1E66300CEEE7D /* LaunchScreen.storyboard in Resources */,
 				6F52A13122D1E66300CEEE7D /* Assets.xcassets in Resources */,
+				6F3EC86522D61ED200AB064C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +547,7 @@
 				6F52A16C22D1F69900CEEE7D /* CalendarContentsTableViewCell.swift in Sources */,
 				6F52A17D22D2007400CEEE7D /* Live.swift in Sources */,
 				6F52A16222D1EF9C00CEEE7D /* CalendarViewController.swift in Sources */,
+				6F3EC86322D613C100AB064C /* FirestoreAccess.swift in Sources */,
 				6F8E441B22D4F1F800448510 /* LiveRepository.swift in Sources */,
 				6F52A12A22D1E66200CEEE7D /* AppDelegate.swift in Sources */,
 				6F52A17222D1F96300CEEE7D /* LiveDetailViewController.swift in Sources */,

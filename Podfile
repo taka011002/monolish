@@ -9,6 +9,10 @@ target 'monolith' do
   pod 'RxCocoa', '~> 5'
   pod 'FSCalendar'
   pod 'R.swift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'AlamofireImage'
 
   target 'monolithTests' do
     inherit! :search_paths

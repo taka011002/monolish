@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class LiveDetailViewController: UIViewController {
     
@@ -31,7 +32,9 @@ class LiveDetailViewController: UIViewController {
         
         isClearNavigationBar(true)
         
-        mainImageView.image = live.mainImage
+        mainImageView.image = nil
+        mainImageView.af_setImage(withURL: URL(string: live.mainImageURL)!)
+        
         mainTitleLabel.text = live.name
         placeLabel.text = live.place
         dateLabel.text = live.date.map{ live -> String in
